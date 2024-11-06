@@ -1,0 +1,165 @@
+▎Задание 1: Вычисление сопротивления R0
+
+#include <iostream>
+
+int main() {
+    double R1, R2, R3;
+    std::cout << "Введите сопротивления R1, R2, R3: ";
+    std::cin >> R1 >> R2 >> R3;
+
+    double R0 = 1 / (1/R1 + 1/R2 + 1/R3);
+    std::cout << "Сопротивление R0 = " << R0 << " Ом" << std::endl;
+
+    return 0;
+}
+
+▎Задание 2: Площадь круга по длине окружности
+
+#include <iostream>
+#include <cmath>
+
+const double PI = 3.14159265358979323846;
+
+int main() {
+    double L;
+    std::cout << "Введите длину окружности: ";
+    std::cin >> L;
+
+    double R = L / (2 * PI);
+    double S = PI * pow(R, 2);
+    std::cout << "Площадь круга = " << S << " квадратных единиц" << std::endl;
+
+    return 0;
+}
+
+▎Задание 3: Пройденное расстояние при равноускоренном движении
+
+#include <iostream>
+
+int main() {
+    double v, t, a;
+    std::cout << "Введите скорость (м/с): ";
+    std::cin >> v;
+    std::cout << "Введите время (с): ";
+    std::cin >> t;
+    std::cout << "Введите ускорение (м/с^2): ";
+    std::cin >> a;
+
+    double S = v * t + (a * pow(t, 2)) / 2;
+    std::cout << "Пройденное расстояние S = " << S << " метров" << std::endl;
+
+    return 0;
+}
+
+▎Задание 4: Перевод секунд в часы, минуты и секунды
+
+#include <iostream>
+
+int main() {
+    int seconds;
+    std::cout << "Введите время в секундах: ";
+    std::cin >> seconds;
+
+    int hours = seconds / 3600;
+    seconds %= 3600;
+    int minutes = seconds / 60;
+    seconds %= 60;
+
+    std::cout << hours << " часов, " << minutes << " минут, " << seconds << " секунд" << std::endl;
+
+    return 0;
+}
+
+▎Задание 5: Преобразование дробного числа в денежный формат
+
+
+#include <iostream>
+#include <iomanip>
+
+int main() {
+    double amount;
+    std::cout << "Введите сумму: ";
+    std::cin >> amount;
+
+    int dollars = static_cast<int>(amount);
+    int cents = static_cast<int>((amount - dollars) * 100);
+
+    std::cout << dollars << " долларов и " << cents << " центов" << std::endl;
+
+    return 0;
+}
+
+▎Задание 6: Преобразование дней в недели и дни
+
+
+#include <iostream>
+
+int main() {
+    int days;
+    std::cout << "Введите количество дней: ";
+    std::cin >> days;
+
+    int weeks = days / 7;
+    int remaining_days = days % 7;
+
+    std::cout << weeks << " недель и " << remaining_days << " дней" << std::endl;
+
+    return 0;
+}
+
+▎Задание 7: Вычисление скорости бегуна
+
+#include <iostream>
+#include <iomanip>
+
+int main() {
+    double distance;
+    double time_min, time_sec;
+
+    std::cout << "Calculating running speed." << std::endl;
+    std::cout << "Enter the length of distance(meters) = ";
+    std::cin >> distance;
+
+    std::cout << "Enter time(min.sec) = ";
+    char dot; // для считывания точки
+    std::cin >> time_min >> dot >> time_sec;
+
+    // Перевод времени в секунды
+    int total_seconds = static_cast<int>(time_min) * 60 + static_cast<int>(time_sec * 100); // умножаем на 100 для получения целых секунд
+
+    // Вычисление скорости в км/ч
+    double speed_kmh = (distance / total_seconds) * 3600 / 1000; // переводим метры в километры и секунды в часы
+
+    std::cout << "Distance: " << distance << " m" << std::endl;
+    std::cout << "Time: " << static_cast<int>(time_min) << " min " 
+              << static_cast<int>(time_sec * 100) << " sec = " 
+              << total_seconds << " seconds" << std::endl;
+    
+    std::cout << std::fixed << std::setprecision(2);
+    std::cout << "You were running at speed " << speed_kmh << " km/h" << std::endl;
+
+    return 0;
+}
+
+▎Задание 8: Вычисление месячного дохода от вклада
+
+#include <iostream>
+
+int main() {
+    double principal, rate;
+    
+    std::cout << "Введите сумму вклада в евро: ";
+    std::cin >> principal;
+    
+    std::cout << "Введите процент годовых: ";
+    std::cin >> rate;
+
+    // Месячный доход
+    double monthly_income = (principal * rate / 100) / 12;
+
+    std::cout << "Сумма денег, выплачиваемых банком вкладчику каждый месяц: "
+
+              << monthly_income << " евро" << std::endl;
+
+    return 0;
+}
