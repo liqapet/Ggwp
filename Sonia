@@ -1,0 +1,78 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Задание 1
+    float R1, R2, R3, R0;
+    cout << "Введите сопротивления R1, R2, R3: ";
+    cin >> R1 >> R2 >> R3;
+    R0 = 1 / (1/R1 + 1/R2 + 1/R3);
+    cout << "Значение сопротивления R0: " << R0 << endl;
+
+    // Задание 2
+    float L, R, S;
+    const float pi = 3.14159;
+    cout << "Введите длину окружности: ";
+    cin >> L;
+    R = L / (2 * pi);
+    S = pi * R * R;
+    cout << "Площадь круга: " << S << endl;
+
+    // Задание 3
+    float v, t, a, distance;
+    cout << "Введите скорость, время и ускорение: ";
+    cin >> v >> t >> a;
+    distance = v*t + (a*t*t) / 2;
+    cout << "Пройденное расстояние: " << distance << endl;
+
+    // Задание 4
+    int seconds, hours, minutes;
+    cout << "Введите время в секундах: ";
+    cin >> seconds;
+    hours = seconds / 3600;
+    minutes = (seconds % 3600) / 60;
+    seconds = seconds % 60;
+    cout << "Время: " << hours << " часов " << minutes << " минут " << seconds << " секунд" << endl;
+
+    // Задание 5
+    float amount;
+    cout << "Введите дробное число: ";
+    cin >> amount;
+    int dollars = amount;
+    int cents = (amount - dollars) * 100;
+    cout << "Денежный формат: " << dollars << " долларов и " << cents << " центов" << endl;
+
+    // Задание 6
+    int days, weeks, remainingDays;
+    cout << "Введите количество дней: ";
+    cin >> days;
+    weeks = days / 7;
+    remainingDays = days % 7;
+    cout << weeks << " недель и " << remainingDays << " дней" << endl; 
+// Задание 7
+    float distance, timeMin, timeSec, totalTime, speed;
+    cout << "Calculating running speed." << endl;
+    cout << "Enter the length of distance(meters) = ";
+    cin >> distance;
+    cout << "Enter time(min.sec) = ";
+    cin >> timeMin >> timeSec;
+    
+    totalTime = timeMin * 60 + timeSec;
+    speed = distance / totalTime * 3.6; // converting m/s to km/h
+
+    cout << "Distance: " << distance << " m" << endl;
+    cout << "Time: " << timeMin << " min " << timeSec << " sec = " << totalTime << " seconds" << endl;
+    cout << "You were running at speed " << speed << " km/h" << endl;
+
+    // Задание 8
+    float depositAmount, annualInterestRate, monthlyPayment;
+    cout << "Введите сумму денежного вклада в евро: ";
+    cin >> depositAmount;
+    cout << "Введите процент годовых, выплачиваемых банком: ";
+    cin >> annualInterestRate;
+
+    monthlyPayment = (depositAmount * annualInterestRate / 100) / 12;
+    cout << "Сумма денег, выплачиваемых банком вкладчику каждый месяц: " << monthlyPayment << " евро" << endl;
+
+    return 0;
+}
